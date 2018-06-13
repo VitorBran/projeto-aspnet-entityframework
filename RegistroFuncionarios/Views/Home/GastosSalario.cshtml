@@ -1,0 +1,23 @@
+﻿@model RegistroFuncionarios.ViewModels.ConsultaGastos
+
+@{
+    ViewBag.Title = "Salários por data";
+}
+
+<h2>Salários por data</h2>
+
+@using (Html.BeginForm("GastosSalario", "Home", FormMethod.Get))
+{
+    <p>
+        Consultar gastos com salário de funcinário por data: @Html.TextBox("SearchString")
+
+        <input type="submit" value="Consultar" />
+    </p>
+}
+
+    <p>Data Atual: @Model.DataAltual</p>
+    <p>Total de gastos com salários atualmente: @Model.TotalSalarioAtual.ToString("C2")</p>
+    <p>Data Consultada: @Model.DataConsulta</p>
+    <p>Total de gastos com salários na data consultada: @Model.TotalSalarioConsultado.ToString("C2")</p>
+
+    
